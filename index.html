@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+  </head>
+  <body>
+    
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="#"><img src="images/search.png" width="2%" height="2%"> Search and Book</a>
+      <a href="#">Services</a>
+      <a href="#">About Us</a>
+      <a href="#">Contact Us</a>
+    </div>
+
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded" >
+        
+        <!--<a class="navbar-brand" href="#">Book My Appointment</a>-->
+        <div class="col-md-4">
+          <span style="font-size:30px;cursor:pointer;" onclick="openNav()">&#9776;<a style="padding-left: 30px;color: #4689f4;" id="name"> Book My Appointment</a></span>
+        </div>
+        <div class="col-md-5"></div>
+        <div class="col-md-3">
+          <a href="#" id="login1">For Doctors</a>&nbsp &nbsp &nbsp <a href="#" id="login2">LogIn / Register</a>
+        </div>
+    </nav>
+
+
+    <div class="row">
+      <div class="container">
+        <p class="mainname">Find and Book</p>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+    <!--<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>-->
+
+    <script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "100%";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+    </script>
+
+
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  </body>
+</html>
