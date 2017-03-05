@@ -92,3 +92,24 @@
     font-size: 30px;
     color: #4e5156;
 }
+.images{
+    width: 100%;
+    height: 450px;
+}
+#carousel{
+    width: 90%;
+    margin-left: 70px;
+    margin-top: 40px;
+
+    border: none;
+}
+#searchbar{
+    padding-left: 200px;
+}
+@media (min-width: 1200px)
+{
+.row {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+}
