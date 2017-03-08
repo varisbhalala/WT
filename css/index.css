@@ -45,7 +45,7 @@
     #login1{
         font-size: 13px;
     }
-    #login2{
+    .login2{
         font-size: 13px;
     }
 }
@@ -57,7 +57,7 @@
     #login1{
         font-size: 13px;
     }
-    #login2{
+    .login2{
         font-size: 13px;
     }   
 }
@@ -69,7 +69,7 @@
     #login1{
         font-size: 15px;
     }
-    #login2{
+    .login2{
         font-size: 15px;
     }
 }
@@ -81,7 +81,7 @@
     #login1{
         font-size: 17px;
     }
-    #login2{
+    .login2{
         font-size: 17px;
     }
 }
@@ -105,6 +105,7 @@
 }
 #searchbar{
     padding-left: 200px;
+    padding-right: 200px;
 }
 @media (min-width: 1200px)
 {
@@ -112,4 +113,45 @@
     margin-right: 0px;
     margin-left: 0px;
 }
+}
+#city{
+    padding-left: 200px;
+}
+.button2 {
+    background-color: white; 
+    color: black; 
+    padding-left: 50px;
+    padding-right: 50px;
+    border: 2px solid #4288f4;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.doc-type-container{
+    padding-left: 200px;
+}
+.tab-lefe-nav:hover {
+    color: blue;
+}
+.links{
+    padding-top: 50px;
+    margin-left: 200px;
+    padding-bottom: 50px;
+}
+footer{
+    background-color: #d6d8db;
+    margin-top: 80px;
+}
+.links{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding-left: 90px;
+    padding-right: 90px;
+    box-shadow: rgba(0,0,0,0.5) 2px 5px 5px 2px;
+}
+.links:hover{
+    box-shadow: rgba(0,0,0,0.5) 4px 7px 7px 4px;
 }

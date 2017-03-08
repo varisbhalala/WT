@@ -27,10 +27,80 @@
         </div>
         <div class="col-md-5"></div>
         <div class="col-md-3">
-          <a href="#" id="login1">For Doctors</a>&nbsp &nbsp &nbsp <a href="#" id="login2">LogIn / Register</a>
+          <a href="#" id="login1">For Doctors</a>&nbsp &nbsp &nbsp <button type="button" class="login2 btn-success" data-target="#loginModal" data-toggle="modal">LogIn / Register</button>
         </div>
+        
+        
     </nav>
+    <div class="modal fade" id="loginModal" role="dialog">
+    <div class="modal-dialog modal-md">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Login Or Register</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" data-toggle="tab" href="#login" role="tab">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#register" role="tab">Register</a>
+            </li>
+          </ul>
 
+          <!-- Tab panes -->
+          <div class="tab-content" style="padding-top: 20px;">
+            <div class="tab-pane active" id="login" role="tabpanel">
+              <label for="inputEmail" class="sr-only">Email address</label>
+                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                
+                <label for="inputPassword" class="sr-only">Password</label>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+            
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="remember-me"> Remember me
+                    </label>
+                </div>
+            
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+            
+                <a href="https://www.forgotpassword.com" style="float: right">Forgot password?</a><br>
+              </div>
+            <div class="tab-pane" id="register" role="tabpanel">
+              <label for="inputEmail" class="sr-only">Email address</label>
+                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                
+                <label for="inputPassword" class="sr-only">Password</label>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                <label for="inputPassword" class="sr-only">Confirm Password</label>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Confirm Password" required>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="remember-me"> Remember me
+                    </label>
+                </div>
+            
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+            
+                <a href="https://www.forgotpassword.com" style="float: right">Forgot password?</a><br>
+              </div>
+            </div>
+                  
+                      
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
     <div id="carousel" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner" role="listbox">
         <div class="carousel-item active">
@@ -58,28 +128,56 @@
         <p class="mainname">Find and Book</p>
         <div class="row" id="searchbar">
         
-            <p>
-              <button class="btn" type="button" data-toggle="collapse" data-target="#city" aria-expanded="false" aria-controls="city">
-                <img src="images/pin.png" width="10%" height="10%"> City
+            
+              <button class="btn" type="button" data-toggle="collapse" data-target="#city" aria-expanded="false" aria-controls="city" >
+                <img src="images/pin.png" width="7%" height="4%"> City
               </button>
-            </p>
+              <form class="form-inline" action="#">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" size="50" style="margin-left: 40px;">
+                <button class="button button2 my-2 my-sm-0" type="submit">Search</button>
+              </form>
+            
+        </div>
+        <div class="row">
             <div class="collapse" id="city">
               <div class="card card-block">
-                <table style="border: none;">
+                <table >
                   <tr>
-                    <td>Anand</td>
-                    <td>Banglore</td>
-                    <td>Surat</td>
+                    <td width="400px;"><a href="#">Anand</a></td>
+                    <td width="400px;"><a href="#">Banglore</a></td>
+                    <td><a href="#">Surat</a></td>
+                  </tr>
+                  <tr>
+                    <td width="400px;"><a href="#">Mumbai</a></td>
+                    <td width="400px;"><a href="#">Chennai</a></td>
+                    <td><a href="#">Delhi</a></td>
+                  </tr>
+                  <tr>
+                    <td width="400px;"><a href="#">Pune</a></td>
+                    <td width="400px;"><a href="#">Ahmedabad</a></td>
+                    <td><a href="#">Vadodara</a></td>
                   </tr>
                 </table>
               </div>
             </div>
-        </div>  
-        
+          </div>
+          
+
+          
 
 
-
-
+    <footer>
+      <div class="row" class="footer">
+        <div class="links">
+            <p>QUICK LINKS</p>
+            <a href="#" style="text-decoration: none;">Search the Doctors</a><br>
+            <a href="#" style="text-decoration: none;">FAQs</a><br>
+            <a href="#" style="text-decoration: none;">Contact Us</a><br>
+            <a href="#" style="text-decoration: none;">About Us</a>
+          </div>
+        </div>
+      </div>
+    </footer>
 
 
     <!--<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>-->
