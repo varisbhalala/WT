@@ -1,4 +1,10 @@
-<?php
+<!DOCTYPE html>
+<html>
+<head>
+	<title>registred</title>
+</head>
+<body>
+	<?php
 
 $db = mysqli_connect('localhost','root','');
 
@@ -9,7 +15,7 @@ if (!$db)
 
 $dbname = 'WT';
 
-$btest = mysqli_select_db($dbname);
+$btest = mysqli_select_db($db,$dbname);
 
 if (!$btest)
 {
@@ -30,9 +36,9 @@ if (isset($_POST['password']))
 }
 if (isset($_POST['name']))
 {
-	$fname = trim($_POST['name']);
+	$name = trim($_POST['name']);
 } else {
-	$fname = '';
+	$name = '';
 }
 if (isset($_POST['degree']))
 {
@@ -90,35 +96,42 @@ if (isset($_POST['endtime']))
 }
 
 
-if (empty($uname) || empty($pass) || empty($name)  || empty($degree) || empty($expi) || empty($profession) || empty($hospital) || empty($address) || empty($fee) || empty($days) || empty($starttime) || empty($endtime))
-{
-	$rtncode = '';
-} else {
+// if (empty($uname) || empty($pass) || empty($name)  || empty($degree) || empty($expi) || empty($profession) || empty($hospital) || empty($address) || empty($fee) || empty($days) || empty($starttime) || empty($endtime))
+// {
+// 	$rtncode = '';
+// } else {
 	$rtncode = insertDoctor($db, $uname, $pass, $name ,$degree ,$expi ,$profession ,$hospital ,$address ,$fee ,$days ,$starttime ,$endtime);
-}
+// }
+?>
+</body>
+</html>
+<?php
+
+
 
 function insertDoctor($db, $uname, $pass, $name ,$degree ,$expi ,$profession ,$hospital ,$address ,$fee ,$days ,$starttime ,$endtime)
 {
 	$statement = "insert into doctorregistration values( '".$uname."','".$pass."','".$name."','".$degree."','".$expi."','".$profession."','".$hospital."','".$address."','".$fee."','".$days."','".$starttime."','".$endtime."')";
 
-	$result = mysql_query($statement);
+	$result = mysqli_query($db,$statement);
 
 	if ($result)
 	{
-		echo "<br>Doctor Added: ".$name;
+		echo "Doctor Added: ".$name;
 	}
-	else {
-		$errno = mysql_errno($db);
+	// else {
+	// 	$errno = mysqli_errno($db);
 
-	    if ($errno == '1062') {
-			echo "<br>Doctor is already in Table: <br />".$name;
-		} else {
-			echo("<h4>MySQL No: ".mysql_errno($result)."</h4>");
-			echo("<h4>MySQL Error: ".mysql_error($result)."</h4>");
-			echo("<h4>SQL: ".$statement."</h4>");
-			echo("<h4>MySQL Affected Rows: ".mysql_affected_rows($result)."</h4>");
-		}
-	}
+	//     if ($errno == '1062') {
+	// 		echo "<br>Doctor is already in Table: <br />".$name;
+	// 	} else {
+	// 		echo("<h4>MySQL No: ".mysqli_errno($result)."</h4>");
+	// 		echo("<h4>MySQL Error: ".mysqli_error($result)."</h4>");
+	// 		echo("<h4>SQL: ".$statement."</h4>");
+	// 		echo("<h4>MySQL Affected Rows: ".mysqli_affected_rows($result)."</h4>");
+	// 	}
+		return 'NotAdded';
+	
 }
 
 

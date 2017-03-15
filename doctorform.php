@@ -18,7 +18,7 @@
 	password<input type="password" name="password">
 	full name<input type="text" name="name"><br>
 	degree<input type="text" name="degree"><br>
-	experience<input type="number" name="experiance"><br>													profession<input type="text" name="profession"><br>
+	experience<input type="number" name="experience"><br>													profession<input type="text" name="profession"><br>
 	hospital name<input type="text" name="hospital"><br>
 	located at<textarea rows="5" cols="30" name="address"></textarea><br>
 	fee<input type="number" name="fee">
