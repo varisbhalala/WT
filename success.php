@@ -76,6 +76,12 @@ if (isset($_POST['fee']))
 } else {
 	$fee = '';
 }
+if (isset($_POST['callno']))
+{
+	$callno = trim($_POST['callno']);
+} else {
+	$callno = '';
+}
 if (isset($_POST['days']))
 {
 	$days = trim($_POST['days']);
@@ -94,13 +100,25 @@ if (isset($_POST['endtime']))
 } else {
 	$endtime = '';
 }
+$imagename = $_FILES["image"]["name"];
+$type = $_FILES["image"]["type"];
+$tmp = $_FILES["image"]["tmp_name"];
+$error = $_FILES["image"]["error"];
+if ($error > 0) {
+	
+	echo " not uploaded";
+}
+else if(($type == "image/jpeg") || ($type == "image/png"))
+{
+	move_uploaded_file($tmp, "/opt/lampp/htdocs/WT/uploaded/".$imagename); 
+	echo "uploaded";
+}
+else{
+	echo "upload image";
+}
+	$rtncode = insertDoctor($db, $uname, $pass,$imagename, $name ,$degree ,$expi ,$profession ,$hospital ,$address ,$fee ,$callno,$days ,$starttime ,$endtime );
 
 
-// if (empty($uname) || empty($pass) || empty($name)  || empty($degree) || empty($expi) || empty($profession) || empty($hospital) || empty($address) || empty($fee) || empty($days) || empty($starttime) || empty($endtime))
-// {
-// 	$rtncode = '';
-// } else {
-	$rtncode = insertDoctor($db, $uname, $pass, $name ,$degree ,$expi ,$profession ,$hospital ,$address ,$fee ,$days ,$starttime ,$endtime);
 // }
 ?>
 </body>
@@ -109,9 +127,9 @@ if (isset($_POST['endtime']))
 
 
 
-function insertDoctor($db, $uname, $pass, $name ,$degree ,$expi ,$profession ,$hospital ,$address ,$fee ,$days ,$starttime ,$endtime)
+function insertDoctor($db, $uname, $pass,$imagename, $name ,$degree ,$expi ,$profession ,$hospital ,$address ,$fee ,$callno,$days ,$starttime ,$endtime)
 {
-	$statement = "insert into doctorregistration values( '".$uname."','".$pass."','".$name."','".$degree."','".$expi."','".$profession."','".$hospital."','".$address."','".$fee."','".$days."','".$starttime."','".$endtime."')";
+	$statement = "insert into doctor_registration values( '".$uname."','".$pass."','".$imagename."','".$name."','".$degree."','".$expi."','".$profession."','".$hospital."','".$address."','".$fee."','".$callno."','".$days."','".$starttime."','".$endtime."')";
 
 	$result = mysqli_query($db,$statement);
 
@@ -119,19 +137,19 @@ function insertDoctor($db, $uname, $pass, $name ,$degree ,$expi ,$profession ,$h
 	{
 		echo "Doctor Added: ".$name;
 	}
-	// else {
-	// 	$errno = mysqli_errno($db);
+	else {
+		$errno = mysqli_errno($db);
 
-	//     if ($errno == '1062') {
-	// 		echo "<br>Doctor is already in Table: <br />".$name;
-	// 	} else {
-	// 		echo("<h4>MySQL No: ".mysqli_errno($result)."</h4>");
-	// 		echo("<h4>MySQL Error: ".mysqli_error($result)."</h4>");
-	// 		echo("<h4>SQL: ".$statement."</h4>");
-	// 		echo("<h4>MySQL Affected Rows: ".mysqli_affected_rows($result)."</h4>");
-	// 	}
+	    if ($errno == '1062') {
+			echo "<br>Doctor is already in Table: <br />".$name;
+		} else {
+			echo("<h4>MySQL No: ".mysqli_errno($result)."</h4>");
+			echo("<h4>MySQL Error: ".mysqli_error($result)."</h4>");
+			echo("<h4>SQL: ".$statement."</h4>");
+			echo("<h4>MySQL Affected Rows: ".mysqli_affected_rows($result)."</h4>");
+		}
 		return 'NotAdded';
-	
+	}
 }
 
 

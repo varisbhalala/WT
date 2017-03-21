@@ -13,27 +13,77 @@
 <?php
       include 'header.php';
       ?>
-<form action="success.php" method="post">
-	username<input type="text" name="username">
-	password<input type="password" name="password">
-	full name<input type="text" name="name"><br>
-	degree<input type="text" name="degree"><br>
-	experience<input type="number" name="experience"><br>													profession<input type="text" name="profession"><br>
-	hospital name<input type="text" name="hospital"><br>
-	located at<textarea rows="5" cols="30" name="address"></textarea><br>
-	fee<input type="number" name="fee">
-	days of working:<br>
-	Monday<input type="checkbox" name="days" value="MON">
-	Tuesday<input type="checkbox" name="days" value="TUE">
-	Wednesday<input type="checkbox" name="days" value="WED">
-	Thursday<input type="checkbox" name="days" value="THU">
-	Friday<input type="checkbox" name="days" value="FRI">
-	Saturday<input type="checkbox" name="days" value="SAT">
-	Sunday<input type="checkbox" name="days" value="SUN"><br>
-	working time:
-	Starting from<input type="number" name="starttime">
-	To<input type="number" name="endtime"><br>
-	<input type="submit">
+<form action="success.php" method="post" enctype="multipart/form-data">
+	<table align="center" style="margin-top: 30px;">
+	<tr>
+		<td>username</td>
+		<td><input type="text" name="username"></td>
+	</tr>
+	<tr>
+		<td>password</td>
+		<td><input type="password" name="password"></td>
+	</tr>
+	<tr>
+		<td>upload image</td>
+		<td><input type="file" name="image"></td>
+	</tr>
+	<tr>
+		<td>full name</td>
+		<td><input type="text" name="name"></td>
+	</tr>
+	<tr>
+		<td>degree</td>
+		<td><input type="text" name="degree"></td>
+	</tr>
+	<tr>
+		<td>experience</td>
+		<td><input type="number" name="experience"></td>
+	</tr>
+	<tr>								
+		<td>profession</td>
+		<td><input type="text" name="profession"></td>
+	</tr>
+	<tr>
+		<td>hospital name</td>
+		<td><input type="text" name="hospital"></td>
+	</tr>
+	<tr>
+		<td>located at</td>
+		<td><textarea rows="5" cols="30" name="address"></textarea></td>
+	</tr>
+	<tr>
+		<td>fees</td>
+		<td><input type="number" name="fee"></td>
+	</tr>
+	<tr>
+		<td>Hospital Contact no.</td>
+		<td><input type="number" name="callno"></td>
+	</tr>
+	<tr>
+		<td>days of working:</td>
+		<td>
+	<select name="days">
+	<option selected="selected" value="week">Full Week</option>
+	<option value="mon-sat">MON-SAT</option>
+	<option value="mon-fri">Mon-FRI</option>
+	<option value="sun">Sunday</option>
+	<option value="mon">Monday</option>
+	<option value="tue">Tuesday</option>
+	<option value="wed">Wednesday</option>
+	<option value="thu"> Thursday</option>
+	<option value="fri">Friday</option>
+	<option value="str">Saturday</option>
+	</select></td>
+	</tr>
+	<tr>
+		<td>working time:Starting from</td>
+	<td><input type="number" name="starttime">
+	To<input type="number" name="endtime"></td>
+	</tr>
+	<tr>
+		<td><input type="submit" name="submit"></td>
+	</tr>
+	</table>
 </form>
 <?php
       include 'footer.php';
