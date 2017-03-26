@@ -43,39 +43,31 @@
           <!-- Tab panes -->
           <div class="tab-content" style="padding-top: 20px;">
             <div class="tab-pane active" id="login" role="tabpanel">
-              <label for="inputEmail" class="sr-only">Email address</label>
-                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus name="username">
+            <form action="successlogin" method="post">
+              <label for="inputEmail" class="sr-only">User name</label>
+                <input type="email" id="inputEmail" class="form-control" placeholder="User name" required autofocus name="username">
                 
                 <label for="inputPassword" class="sr-only">Password</label>
                 <input type="password" id="inputPassword" class="form-control" placeholder="Password" required name="password">
             
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox" value="remember-me"> Remember me
-                    </label>
-                </div>
             
-                <a href="login.php" style="text-decoration: none;"><button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button></a>
-            
-                <a href="https://www.forgotpassword.com" style="float: right">Forgot password?</a><br>
+                <input type="submit" value="Sign in">
+                </form>
               </div>
             <div class="tab-pane" id="register" role="tabpanel">
-              <label for="inputEmail" class="sr-only">Email address</label>
-                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+            <form method="post" action="successregister.php">
+              <label for="inputEmail" class="sr-only">User name</label>
+                <input type="text" id="inputEmail" class="form-control" placeholder="Username" required autofocus name="registerusername">
                 
                 <label for="inputPassword" class="sr-only">Password</label>
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required name="registerpass">
                 <label for="inputPassword" class="sr-only">Confirm Password</label>
-                <input type="password" id="inputPassword" class="form-control" placeholder="Confirm Password" required>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox" value="remember-me"> Remember me
-                    </label>
-                </div>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Confirm Password" required name="registerconfirmpass">
+                
             
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
-            
-                <a href="https://www.forgotpassword.com" style="float: right">Forgot password?</a><br>
+                <input type="submit" value="Sign Up">
+            </form>
+                
               </div>
             </div>
                   
