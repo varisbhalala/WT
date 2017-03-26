@@ -1,9 +1,19 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>registred</title>
-</head>
-<body>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+  </head>
+  <body>
+    <?php
+      include 'header.php';
+      ?>
+    
 	<?php
 
 $db = mysqli_connect('localhost','root','');
@@ -111,31 +121,57 @@ if ($error > 0) {
 else if(($type == "image/jpeg") || ($type == "image/png"))
 {
 	move_uploaded_file($tmp, "/opt/lampp/htdocs/WT/uploaded/".$imagename); 
-	echo "uploaded";
+	//echo "uploaded";
 }
 else{
 	echo "upload image";
 }
-	$rtncode = insertDoctor($db, $uname, $pass,$imagename, $name ,$degree ,$expi ,$profession ,$hospital ,$address ,$fee ,$callno,$days ,$starttime ,$endtime );
-
-
-// }
-?>
-</body>
-</html>
-<?php
+	// $rtncode = insertDoctor($db, $uname, $pass,$imagename, $name ,$degree ,$expi ,$profession ,$hospital ,$address ,$fee ,$callno,$days ,$starttime ,$endtime );
+	
 
 
 
-function insertDoctor($db, $uname, $pass,$imagename, $name ,$degree ,$expi ,$profession ,$hospital ,$address ,$fee ,$callno,$days ,$starttime ,$endtime)
-{
+// function insertDoctor($db, $uname, $pass,$imagename, $name ,$degree ,$expi ,$profession ,$hospital ,$address ,$fee ,$callno,$days ,$starttime ,$endtime)
+// {
 	$statement = "insert into doctor_registration values( '".$uname."','".$pass."','".$imagename."','".$name."','".$degree."','".$expi."','".$profession."','".$hospital."','".$address."','".$fee."','".$callno."','".$days."','".$starttime."','".$endtime."')";
 
 	$result = mysqli_query($db,$statement);
 
 	if ($result)
 	{
-		echo "Doctor Added: ".$name;
+		//echo "Doctor Added: ".$name;
+		echo '<center>';
+		echo '<table style="margin-top:50px;margin-bottom:50px;">';
+		echo '<tr style="padding:50px;">';
+		echo '<td rowspan=11 style="padding:50px;">';
+		$img = "/opt/lampp/htdocs/WT/uploaded/".$imagename;
+		echo '<img src="'.$img.'">';
+		echo '</td>';
+		echo '<td>Name:';
+		echo '"'.$name.'"';
+		echo '</td>';
+		echo '</tr>';
+		echo '<tr><td>Degree:';
+		echo '"'.$degree.'"';echo '</td></tr>';
+		echo '<tr><td>Experience'; 
+		echo '"'.$expi.'"';echo '</td></tr>';
+		echo '<tr><td>profession:'; 
+		echo '"'.$profession.'"';echo '</td></tr>';
+		echo '<tr><td>hospital:'; 
+		echo '"'.$hospital.'"';echo '</td></tr>';
+		echo '<tr><td>Address:'; 
+		echo '"'.$address.'"';echo '</td></tr>';
+		echo '<tr><td>Fee:'; 
+		echo '"'.$fee.'"';echo '</td></tr>';
+		echo '<tr><td>Contact No.:'; 
+		echo '"'.$callno.'"';echo '</td></tr>';
+		echo '<tr><td>Working days:'; 
+		echo '"'.$days.'"';echo '</td></tr>';
+		echo '<tr><td>Start time:'; 
+		echo '"'.$starttime.'"';echo '</td></tr>';
+		echo '<tr><td>end time:'; 
+		echo '"'.$endtime.'"';echo '</td></tr>';
+		echo '</center>';
 	}
 	else {
 		$errno = mysqli_errno($db);
@@ -150,7 +186,14 @@ function insertDoctor($db, $uname, $pass,$imagename, $name ,$degree ,$expi ,$pro
 		}
 		return 'NotAdded';
 	}
-}
+
 
 
 ?>
+<?php
+	include 'footer.php';
+	?>
+
+
+</body>
+</html>

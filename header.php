@@ -14,7 +14,8 @@
         </div>
         <div class="col-md-5"></div>
         <div class="col-md-3">
-          <a href="doctorform.php" id="login1">For Doctors</a>&nbsp &nbsp &nbsp <button type="button" class="login2 btn-success" data-target="#loginModal" data-toggle="modal">LogIn / Register</button>
+          <a href="doctorform.php" id="login1">For Doctors</a>&nbsp &nbsp &nbsp
+           <button type="button" class="login2 btn-success" data-target="#loginModal" data-toggle="modal">LogIn / Register</button>
         </div>
         
         
@@ -43,10 +44,10 @@
           <div class="tab-content" style="padding-top: 20px;">
             <div class="tab-pane active" id="login" role="tabpanel">
               <label for="inputEmail" class="sr-only">Email address</label>
-                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus name="username">
                 
                 <label for="inputPassword" class="sr-only">Password</label>
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required name="password">
             
                 <div class="checkbox">
                     <label>
@@ -54,7 +55,7 @@
                     </label>
                 </div>
             
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                <a href="login.php" style="text-decoration: none;"><button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button></a>
             
                 <a href="https://www.forgotpassword.com" style="float: right">Forgot password?</a><br>
               </div>
