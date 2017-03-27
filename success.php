@@ -190,6 +190,7 @@ else{
 	}
 
 
+      $sql_statement = 'select username,password from successregistration where username ="'.$username.",password = .$pass. ;
 
 ?>
 <?php

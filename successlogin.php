@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -11,10 +10,7 @@
   </head>
   <body>
     <?php
-      include 'header.php';
-      ?>
-    
-      <?php
+     include 'header.php';
 
       $db = mysqli_connect('localhost','root','');
 
@@ -45,14 +41,14 @@
         $pass = '';
       }
 
-      $sql_statement = "select username,password from successregistration where username = "'.$uname.'" ;
-      $result = mysqli_query($db,$sql_statement);
-
-      if($result > 0)
+$sql_statement = "select username,password from successregistration where username ='".$uname.'",password = "'.$pass."'";
+     $result = mysqli_query($db,$sql_statement);
+      if($result > '0')
       {
-        echo 'enter valid username or password';
+        echo 'logged in';
+     //   header('Location:/opt/lampp/htdocs/WT/index.php');
       }
-      ?>
+    ?>
 
       </body>
       </html>

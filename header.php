@@ -43,9 +43,9 @@
           <!-- Tab panes -->
           <div class="tab-content" style="padding-top: 20px;">
             <div class="tab-pane active" id="login" role="tabpanel">
-            <form action="successlogin" method="post">
+            <form action="successlogin.php" method="post">
               <label for="inputEmail" class="sr-only">User name</label>
-                <input type="email" id="inputEmail" class="form-control" placeholder="User name" required autofocus name="username">
+                <input type="text" id="inputEmail" class="form-control" placeholder="User name" required autofocus name="username">
                 
                 <label for="inputPassword" class="sr-only">Password</label>
                 <input type="password" id="inputPassword" class="form-control" placeholder="Password" required name="password">
