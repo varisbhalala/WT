@@ -50,36 +50,44 @@
       } else {
         $confirmpass = '';
       }
-
-
-      $statement = "insert into successregistration values( '".$username."' , '".$pass."' ,'".$confirmpass."' )";
-      $result = mysqli_query($db,$statement);
-      if ($result)
+      
+      if($pass == $confirmpass)
       {
-        //echo "Doctor Added: ".$name;
-        echo '<center>';
-        echo '<table style="margin-top:50px;margin-bottom:50px;">';
-        echo '<tr style="padding:50px;">';
-        echo '<td>Added:';
-        echo '"'.$username.'"';
-        echo '</td>';
-        echo '</tr>';
-        echo '</table>';
-        echo '</center>';
-      }
-      else {
-      $errno = mysqli_errno($db);
+        $passok = $pass;
+        $statement = "insert into successregistration values( '".$username."' , '".$passok."' )";
+        $result = mysqli_query($db,$statement);
+        if ($result)
+        {
+          //echo "Doctor Added: ".$name;
+          echo '<center>';
+          echo '<table style="margin-top:50px;margin-bottom:50px;">';
+          echo '<tr style="padding:50px;">';
+          echo '<td>Added:';
+          echo '"'.$username.'"';
+          echo '</td>';
+          echo '</tr>';
+          echo '</table>';
+          echo '</center>';
+        }
+        else {
+        $errno = mysqli_errno($db);
 
-        if ($errno == '1062') {
-        echo "<br>Doctor is already in Table: <br />".$name;
-      } else {
-        echo("<h4>MySQL No: ".mysqli_errno($result)."</h4>");
-        echo("<h4>MySQL Error: ".mysqli_error($result)."</h4>");
-        echo("<h4>SQL: ".$statement."</h4>");
-        echo("<h4>MySQL Affected Rows: ".mysqli_affected_rows($result)."</h4>");
+          if ($errno == '1062') {
+          echo "<br>Doctor is already in Table: <br />".$name;
+        } else {
+          echo("<h4>MySQL No: ".mysqli_errno($result)."</h4>");
+          echo("<h4>MySQL Error: ".mysqli_error($result)."</h4>");
+          echo("<h4>SQL: ".$statement."</h4>");
+          echo("<h4>MySQL Affected Rows: ".mysqli_affected_rows($result)."</h4>");
+        }
+        return 'NotAdded';
+        }
       }
-      return 'NotAdded';
+      else
+      {
+        echo 'enter same password in password and confirm password field';
       }
+      
       ?>
       <?php
       include 'footer.php';

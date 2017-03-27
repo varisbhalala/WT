@@ -48,6 +48,8 @@ $sql_statement = "select username,password from successregistration where userna
         echo 'logged in';
      //   header('Location:/opt/lampp/htdocs/WT/index.php');
       }
+
+      include 'footer.php';
     ?>
 
       </body>

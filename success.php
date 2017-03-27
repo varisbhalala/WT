@@ -187,10 +187,9 @@ else{
 			echo("<h4>MySQL Affected Rows: ".mysqli_affected_rows($result)."</h4>");
 		}
 		return 'NotAdded';
+		
 	}
 
-
-      $sql_statement = 'select username,password from successregistration where username ="'.$username.",password = .$pass. ;
 
 ?>
 <?php

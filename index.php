@@ -54,7 +54,7 @@
         <div class="row">
             <div class="collapse" id="city">
               <div class="card card-block">
-                <table >
+                <table>
                   <tr>
                     <td width="400px;"><a href="#">Anand</a></td>
                     <td width="400px;"><a href="#">Banglore</a></td>
