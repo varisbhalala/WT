@@ -14,8 +14,17 @@
         </div>
         <div class="col-md-5"></div>
         <div class="col-md-3">
-          <a href="doctorform.php" id="login1">For Doctors</a>&nbsp &nbsp &nbsp
-           <button type="button" class="login2 btn-success" data-target="#loginModal" data-toggle="modal">LogIn / Register</button>
+          
+          <?php
+           if (isset($_SESSION['user'])) {
+            echo 'WelCome '.$_SESSION['user'];
+             echo '<button type="button" onclick="index.php" style="background-color:#008cba;margin-left:20px;">LogOut</button>';
+           }
+           else{
+              echo '<a href="doctorform.php" id="login1">For Doctors</a>&nbsp &nbsp &nbsp';
+             echo '<button type="button" class="login2 btn-success" data-target="#loginModal" data-toggle="modal">LogIn / Register</button>';
+            }
+           ?>
         </div>
         
         
@@ -31,6 +40,7 @@
         </div>
         <div class="modal-body">
           <!-- Nav tabs -->
+
           <ul class="nav nav-tabs" role="tablist">
             <li class="nav-item">
               <a class="nav-link active" data-toggle="tab" href="#login" role="tab">Login</a>

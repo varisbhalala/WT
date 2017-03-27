@@ -144,10 +144,10 @@ else{
 		//echo "Doctor Added: ".$name;
 		echo '<center>';
 		echo '<table style="margin-top:50px;margin-bottom:50px;">';
-		echo '<tr style="padding:50px;">';
+		echo '<tr>';
 		echo '<td rowspan=11 style="padding:50px;">';
-		$img = "/opt/lampp/htdocs/WT/uploaded/".$imagename;
-		echo '<img src="'.$img.'">';
+		$img = "/WT/uploaded/".$imagename;
+		echo '<img src="'.$img.'" width="130px" height="160px">';
 		echo '</td>';
 		echo '<td>Name:';
 		echo '"'.$name.'"';

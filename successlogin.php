@@ -10,8 +10,8 @@
   </head>
   <body>
     <?php
+      session_start();
      include 'header.php';
-
       $db = mysqli_connect('localhost','root','');
 
       if (!$db)
@@ -43,10 +43,12 @@
 
 $sql_statement = "select username,password from successregistration where username ='".$uname.'",password = "'.$pass."'";
      $result = mysqli_query($db,$sql_statement);
+
       if($result > '0')
       {
         echo 'logged in';
-     //   header('Location:/opt/lampp/htdocs/WT/index.php');
+        $_SESSION['user'] = $uname;
+        //header('location:/WT/index.php');
       }
 
       include 'footer.php';
