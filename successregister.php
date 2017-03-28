@@ -10,8 +10,9 @@
     <link rel="stylesheet" type="text/css" href="css/index.css">
   </head>
   <body>
+    
     <?php
-      $session_start();
+      //session_start();
       include 'header.php';
       ?>
     
@@ -51,11 +52,22 @@
       } else {
         $confirmpass = '';
       }
-      
+      if (isset($_POST['security']))
+      {
+        $security = trim($_POST['security']);
+      } else {
+        $security = '';
+      }
+      if (isset($_POST['security_answer']))
+      {
+        $security_answer = trim($_POST['security_answer']);
+      } else {
+        $security_answer = '';
+      }
       if($pass == $confirmpass)
       {
         $passok = $pass;
-        $statement = "insert into successregistration values( '".$username."' , '".$passok."' )";
+        $statement = "insert into successregistration values( '".$username."' , '".$passok."', '".$security."', '".$security_answer."' )";
         $result = mysqli_query($db,$statement);
         if ($result)
         {

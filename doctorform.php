@@ -10,10 +10,11 @@
     <link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
 <body>
-<?php
+
+ <?php
       include 'header.php';
       ?>
-<form action="success.php" method="post" enctype="multipart/form-data">
+ <form action="success.php" method="post" enctype="multipart/form-data">
 	<table align="center" style="margin-top: 30px;">
 	<tr>
 		<td>username</td>

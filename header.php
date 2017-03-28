@@ -16,9 +16,13 @@
         <div class="col-md-3">
           
           <?php
+          //if (session_status()==PHP_SESSION_NONE) {
+            # code...
+            session_start();
+          
            if (isset($_SESSION['user'])) {
             echo 'WelCome '.$_SESSION['user'];
-             echo '<button type="button" onclick="index.php" style="background-color:#008cba;margin-left:20px;">LogOut</button>';
+             echo '<a href="logout.php"><button type="button" style="background-color:#008cba;margin-left:20px;">LogOut</button></a>';
            }
            else{
               echo '<a href="doctorform.php" id="login1">For Doctors</a>&nbsp &nbsp &nbsp';
@@ -59,8 +63,8 @@
                 
                 <label for="inputPassword" class="sr-only">Password</label>
                 <input type="password" id="inputPassword" class="form-control" placeholder="Password" required name="password">
-            
-            
+                <a href="forgotpassword.php">Forgot Password?</a>
+                <br>
                 <input type="submit" value="Sign in">
                 </form>
               </div>
@@ -73,8 +77,19 @@
                 <input type="password" id="inputPassword" class="form-control" placeholder="Password" required name="registerpass">
                 <label for="inputPassword" class="sr-only">Confirm Password</label>
                 <input type="password" id="inputPassword" class="form-control" placeholder="Confirm Password" required name="registerconfirmpass">
-                
-            
+                <label class="sr-only">Security Question</label>
+                <select name="security">
+                  <option value="What was the name of your elementary / primary school?
+                    ">What was the name of your elementary / primary school?
+                  </option>
+                  <option value="In what city or town does your nearest sibling live?
+                  " >In what city or town does your nearest sibling live?
+                  </option>
+                  <option value="What time of the day were you born? (hh:mm)">What time of the day were you born? (hh:mm)</option>
+                  <option value="What is your pet’s name?">What is your pet’s name?</option>
+                  <option value="In what year was your father born?">In what year was your father born?</option>
+                </select>
+                <input type="text" name="security_answer"><br>
                 <input type="submit" value="Sign Up">
             </form>
                 
