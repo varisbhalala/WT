@@ -17,20 +17,11 @@
       	print "<h1>Unable to Select the Database</h1>";
       }
 
-      if (isset($_POST['username']))
+      if (isset($_POST['username']) && isset($_POST['password']))
       {
         $uname = trim($_POST['username']);
-      } else {
-        $uname = '';
-      }
-      if (isset($_POST['password']))
-      {
         $pass = trim($_POST['password']);
-      } else {
-        $pass = '';
-      }
-
-$sql_statement = "select username,password from successregistration where username ='".$uname.'",password = "'.$pass."'";
+        $sql_statement = "select username,password from successregistration where username ='".$uname.'",password = "'.$pass."'";
      $result = mysqli_query($db,$sql_statement);
 
       if($result > '0')
@@ -43,5 +34,12 @@ $sql_statement = "select username,password from successregistration where userna
       {
         header('location:/WT/doctorform.php');
       }
+
+      } else {
+        header('location:/WT/forgotpassword.php');  
+      }
+      
+
+
 //      include 'footer.php';
     ?>

@@ -40,12 +40,16 @@
         <p class="mainname">Find and Book</p>
         <div class="row" id="searchbar">
         
-            
+            <form class="form-inline" action="#">
               <button class="btn" type="button" data-toggle="collapse" data-target="#city" aria-expanded="false" aria-controls="city" >
                 <img src="images/pin.png" width="7%" height="4%"> City
               </button>
-              <form class="form-inline" action="#">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search" size="50" style="margin-left: 40px;">
+              <select name="by" style="margin-left: 30px">
+                <option value="by_name" selected>By Name</option>
+                <option value="by_speciality">By Speciality</option>
+                <option value="by_area">By Area</option>
+              </select>
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" size="40" style="margin-left: 30px;">
                 <button class="button button2 my-2 my-sm-0" type="submit">Search</button>
               </form>
             

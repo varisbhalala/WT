@@ -13,6 +13,7 @@
     
     <?php
       include 'header.php';
+      $uname = $_POST['username'];
       $db = mysqli_connect('localhost','root','');
 
       if (!$db)
@@ -28,16 +29,19 @@
       {
         print "<h1>Unable to Select the Database</h1>";
       }
-      if (isset($_POST['username']))
+        echo "hihhhhhh".$uname;
+      if (isset($uname))
       {
-        $uname = trim($_POST['username']);
-      } else {
+        $uname = trim($uname);
+      } 
+      else {
         $uname = '';
       }
+      echo "byeeeee".$uname;
        $statement = "select securityquestion from successregistration where username = '".$uname."'";
       $result = mysqli_query($db,$statement);
       
-      $row = mysqli_fetch_array($result);
+      $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
       echo $row["securityquestion"];
       
     ?>

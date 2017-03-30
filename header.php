@@ -58,12 +58,13 @@
           <div class="tab-content" style="padding-top: 20px;">
             <div class="tab-pane active" id="login" role="tabpanel">
             <form action="successlogin.php" method="post">
+              <form action="forgotpassword.php" action="post">
               <label for="inputEmail" class="sr-only">User name</label>
                 <input type="text" id="inputEmail" class="form-control" placeholder="User name" required autofocus name="username">
                 
                 <label for="inputPassword" class="sr-only">Password</label>
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required name="password">
-                <a href="forgotpassword.php">Forgot Password?</a>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password">
+                <input type="submit" value="Forgot Password"></form> 
                 <br>
                 <input type="submit" value="Sign in">
                 </form>
