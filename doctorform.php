@@ -8,52 +8,54 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/table.css">
 </head>
 <body>
 
  <?php
       include 'header.php';
       ?>
+      <p align="center" style="font-size: 30px;color: #4286f4;padding-top: 30px;">Doctor Registration</p>
  <form action="success.php" method="post" enctype="multipart/form-data">
 	<table align="center" style="margin-top: 30px;">
 	<tr>
-		<td>username</td>
+		<td>Username</td>
 		<td><input type="text" name="username"></td>
 	</tr>
 	<tr>
-		<td>password</td>
+		<td>Password</td>
 		<td><input type="password" name="password"></td>
 	</tr>
 	<tr>
-		<td>upload image</td>
+		<td>Upload Image</td>
 		<td><input type="file" name="image"></td>
 	</tr>
 	<tr>
-		<td>full name</td>
+		<td>Full Name</td>
 		<td><input type="text" name="name"></td>
 	</tr>
 	<tr>
-		<td>degree</td>
+		<td>Degree</td>
 		<td><input type="text" name="degree"></td>
 	</tr>
 	<tr>
-		<td>experience</td>
+		<td>Experience</td>
 		<td><input type="number" name="experience"></td>
 	</tr>
 	<tr>								
-		<td>profession</td>
+		<td>Speciality</td>
 		<td><input type="text" name="profession"></td>
 	</tr>
 	<tr>
-		<td>hospital name</td>
+		<td>Hospital Name</td>
 		<td><input type="text" name="hospital"></td>
 	</tr>
 	<tr>
-		<td>located at</td>
+		<td>Address</td>
 		<td><textarea rows="5" cols="30" name="address"></textarea></td>
 	</tr>
 	<tr>
-		<td>fees</td>
+		<td>Fees</td>
 		<td><input type="number" name="fee"></td>
 	</tr>
 	<tr>
@@ -61,7 +63,7 @@
 		<td><input type="number" name="callno"></td>
 	</tr>
 	<tr>
-		<td>days of working:</td>
+		<td>Days of Working:</td>
 		<td>
 	<select name="days">
 	<option selected="selected" value="week">Full Week</option>
@@ -77,7 +79,7 @@
 	</select></td>
 	</tr>
 	<tr>
-		<td>working time:Starting from</td>
+		<td>Working Time:Starting from</td>
 	<td><input type="number" name="starttime">
 	To<input type="number" name="endtime"></td>
 	</tr>

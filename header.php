@@ -1,9 +1,9 @@
 <div id="mySidenav" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <a href="#"><img src="images/search.png" width="2%" height="2%"> Search and Book</a>
+      <a href="index.php"><img src="images/search.png" width="2%" height="2%"> Search and Book</a>
       <a href="#">Services</a>
-      <a href="#">About Us</a>
-      <a href="#">Contact Us</a>
+      <a href="aboutus.php">About Us</a>
+      <a href="contactus.php">Contact Us</a>
     </div>
 
     <nav class="navbar navbar-toggleable-md navbar-light bg-faded" >

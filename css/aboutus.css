@@ -1,0 +1,12 @@
+.about{
+	margin-left: 250px;
+	margin-right: 250px;
+	color: #85aae5;
+}
+.center{
+	
+	background-image: url("/WT/images/family.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-attachment: fixed;
+}
