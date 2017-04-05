@@ -14,7 +14,8 @@
   <body>
 
 	<?php
-		include 'header.php';
+		include 'header.php';?>
+		<?php
 		$db = mysqli_connect('localhost','root','');
 
 		if (!$db)
@@ -192,7 +193,7 @@
 ?>
 <?php
 	include 'footer.php';
-	?>
+?>
 
 
 </body>

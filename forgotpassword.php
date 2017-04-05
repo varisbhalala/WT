@@ -15,7 +15,7 @@
 	?>
 	<center>
 		<form action="security.php" method="post">
-			<input type="text" name="uname">
+			Enter username<input type="text" name="uname">
 			<input type="submit">
 		</form>
 	</center>

@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -10,8 +9,12 @@
     <link rel="stylesheet" type="text/css" href="css/index.css">
   </head>
   <body>
-    <?php
+  
+  <?php
       include 'header.php';
+  ?>
+  
+      <?php
         $db = mysqli_connect('localhost','root','');
 
         if (!$db)
@@ -33,34 +36,91 @@
         } else {
           $select = '';
         }
-        if (isselect = trim($_POST['search']))
+        if (isset($_POST['search']))
         {
           $search = trim($_POST['search']);
         } else {
           $search = '';
         }
 
-        if(isset($select) && ($search))
+        if(isset($select) && isset($search))
         {
           if($select == 'by_name')
           {
-            $statement = 'select * from doctor_registration where fullname = "'.$search."'";
+            $statement = "SELECT * FROM doctor_registration WHERE fullname = '$search'";
           }
           if($select == 'by_speciality')
           {
-            $statement = 'select * from doctor_registration where speciality= "'.$search."'";
+            $statement = "SELECT * FROM doctor_registration WHERE speciality = '$search'";
           }
           if($select == 'by_area')
           {
-            $statement = 'select * from doctor_registration where locatedat = "'.$search."'";
+            $statement = "SELECT * FROM doctor_registration WHERE locatedat = '$search'";
           }
-          
-        }
+          $result = mysqli_query($db, $statement);
+          if (mysqli_num_rows($result) > 0) {
+	           	    
+		       while($row = mysqli_fetch_assoc($result)) {
+		        echo "<center><table style='margin-top:20px;margin-bottom:15px;'>";
+            echo '<tr>';
+            echo '<td rowspan="3" style="padding-right:40px;">';
+            echo "<img height='160px' width='100px' src='/WT/uploaded/".$row["imagename"]."'>";
+            echo "</td><td colspan='2'>";
+            echo $row["fullname"];
+            echo "</td>";
+            echo "<td>Address:";
+            echo $row["locatedat"];
+            echo "</td>";
+            echo "<td>working days:";
+            echo $row["days"];
+            echo "</td>";
+            echo "</tr>";
+            echo '<tr>';
+            echo '<td style="padding-right:20px;">experience:';
+            echo $row["experience"];
+            echo "</td>";
+            echo '<td style="padding-right:20px;">hospital:';
+            echo $row["hospitalname"];
+            echo "</td>";
+            echo '<td>fees:';
+            echo $row["fees"];
+            echo "</td>";
+            echo '<td>start time:';
+            echo $row["starttime"];
+            echo "</td>";
+            echo "</tr>";
+            echo '<tr>';
+            echo '<td>Degree:';
+            echo $row["degree"];
+            echo "</td>";
+            echo '<td>Speciality:';
+            echo $row["speciality"];
+            echo "</td>";
+            echo '<td style="padding-right:20px;">Contact no:';
+            echo $row["contactno"];
+            echo "</td>";
+            echo '<td>End time:';
+            echo $row["endtime"];
+            echo "</td>";
+            echo '</tr>';
+            echo '<tr>';
+            echo "<td style='text-align:center;' colspan='5'>";
+            echo "<a href='#'>book now</a>";
+            echo "</td></tr>";
+            echo "</table></center>";
+		     }
+            
+		   }
+       else{
+        echo "result not found";
+       }
+     }
 
-
+        ?>
+     
+    
+    <?php
       include 'footer.php';
     ?>
-
-
-</body>
-</html> 
+    </body>
+    </html>
