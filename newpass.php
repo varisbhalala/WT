@@ -14,8 +14,8 @@
 		include 'header.php';
 	?>
 	<center>
-		<form action="security.php" method="post">
-			<input type="text" name="uname">
+		<form action="newpasssave.php" method="post">
+			Enter new password<input type="text" name="newpass">
 			<input type="submit">
 		</form>
 	</center>

@@ -14,10 +14,8 @@
 		include 'header.php';
 	?>
 	<center>
-		<form action="security.php" method="post">
-			<input type="text" name="uname">
-			<input type="submit">
-		</form>
+		Password Changed
+		<a href="index.php">Home page</a>
 	</center>
 	<?php
 		include 'footer.php';

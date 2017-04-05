@@ -64,6 +64,7 @@
                 <label for="inputPassword" class="sr-only">Password</label>
                 <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required="true"> 
                 <br>
+                <a href="forgotpassword.php">Forgot Password?</a>
                 <input type="submit" value="Sign in">
                 </form>
               </div>
