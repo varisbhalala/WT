@@ -21,10 +21,11 @@
       {
         $uname = trim($_POST['username']);
         $pass = trim($_POST['password']);
-        $sql_statement = "select username,password from successregistration where username ='".$uname.'",password = "'.$pass."'";
-     $result = mysqli_query($db,$sql_statement);
-
-      if($result > '0')
+        $sql = "SELECT username FROM successregistration WHERE username = '$uname' and password = '$pass'";
+     $result = mysqli_query($db,$sql);
+     $num_rows = mysqli_num_rows($result);
+     //echo $num_rows;
+      if($num_rows == 1)
       {
         //echo 'logged in';
         $_SESSION['user'] = $uname;
@@ -32,12 +33,10 @@
       }
       else
       {
-        header('location:/WT/doctorform.php');
+        header('location:/WT/forgotpassword.php'); 
       }
 
-      } else {
-        header('location:/WT/forgotpassword.php');  
-      }
+      } 
       
 
 
