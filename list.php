@@ -59,7 +59,7 @@
           }
           $result = mysqli_query($db, $statement);
           if (mysqli_num_rows($result) > 0) {
-	           	    
+	          $i=0; 	    
 		       while($row = mysqli_fetch_assoc($result)) {
 		        echo "<center><table style='margin-top:20px;margin-bottom:15px;'>";
             echo '<tr>';
@@ -105,7 +105,8 @@
             echo '</tr>';
             echo '<tr>';
             echo "<td style='text-align:center;' colspan='5'>";
-            echo "<a href='#'>book now</a>";
+            $name = $row['username'];
+            echo "<a href='book1.php?doctorid=$name'>book now</a>";
             echo "</td></tr>";
             echo "</table></center>";
 		     }

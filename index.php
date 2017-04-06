@@ -82,7 +82,7 @@
           
 
 
-    <footer>
+    <footer style="margin-top: 20px;">
       <div class="row" class="footer">
         <div class="links">
             <p>QUICK LINKS</p>
