@@ -15,6 +15,7 @@
  <?php
       include 'header.php';
       ?>
+      <center>
       <p align="center" style="font-size: 30px;color: #4286f4;padding-top: 30px;">Doctor Registration</p>
  <form action="success.php" method="post" enctype="multipart/form-data">
 	<table align="center" style="margin-top: 30px;">
@@ -84,10 +85,24 @@
 	To<input type="number" name="endtime"></td>
 	</tr>
 	<tr>
+		<td>Working time slots:</td><td>
+		<input type="checkbox" name="slot1" value="available">10 to 11<br>
+		<input type="checkbox" name="slot2" value="available">11 to 12<br>
+		<input type="checkbox" name="slot3" value="available">12 to 1<br>
+		<input type="checkbox" name="slot4" value="available">1 to 2<br>
+		<input type="checkbox" name="slot5" value="available">2 to 3<br>
+		<input type="checkbox" name="slot6" value="available">3 to 4<br>
+		<input type="checkbox" name="slot7" value="available">4 to 5<br>
+		<input type="checkbox" name="slot8" value="available">5 to 6<br>
+		<input type="checkbox" name="slot9" value="available">6 to 7
+		</td>
+	</tr>
+	<tr>
 		<td><input type="submit" name="submit"></td>
 	</tr>
 	</table>
 </form>
+</center>
 <?php
       include 'footer.php';
       ?>

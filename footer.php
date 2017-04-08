@@ -3,7 +3,6 @@
         <div class="links">
             <p>QUICK LINKS</p>
             <a href="index.php" style="text-decoration: none;">Search the Doctors</a><br>
-            <a href="#" style="text-decoration: none;">FAQs</a><br>
             <a href="contactus.php" style="text-decoration: none;">Contact Us</a><br>
             <a href="aboutus.php" style="text-decoration: none;">About Us</a>
           </div>

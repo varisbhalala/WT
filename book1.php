@@ -36,8 +36,9 @@
 	        $statement = "SELECT * FROM doctor_registration WHERE username = '$code'";
 			$result = mysqli_query($db, $statement);
 	          if (mysqli_num_rows($result) > 0) {
-		          $i=0; 	    
-			       while($row = mysqli_fetch_assoc($result)) {
+		          $i=0; 
+		          $row=mysqli_fetch_array($result,MYSQLI_NUM);	    
+			       while($row) {
 			        echo "<center><table style='margin-top:20px;margin-bottom:15px;'>";
 	            echo '<tr>';
 	            echo '<td rowspan="3" style="padding-right:40px;">';
@@ -97,12 +98,16 @@
 	            }
 	            echo "</tr>";
 	            echo "<tr>";
+	            $starttime = $row['starttime'];
+	            $endtime = $row['endtime'];
+	            $timediff = $endtime -$starttime;
 	            for ($i=$row['starttime']-1; $i < $row['endtime']-1 ; $i++) { 
-	            	$starttime = $i+1;
-	            	$endtime = $i+2;
+
 	            	echo "<td style='padding-right:5px;'>";
-	            	echo "<a href='availability.php?doctorid=$name&starttime=$starttime&endime=$endtime'>check availibility </a>";
-	            	echo "</th>";
+	            	//echo "<a href='availability.php?doctorid=$name&starttime=$starttime&endime=$endtime'>check availibility </a>";
+	            	echo $row[22 - ($timediff+1)];
+	            	$timediff--;
+	            	echo "</td>";
 	            }
 	            echo "</tr>";
 	            echo "</table>";

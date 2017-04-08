@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -110,6 +108,69 @@
 		} else {
 			$endtime = '';
 		}
+		if (isset($_POST['slot1']))
+		{
+			$slot1 = ($_POST['slot1']);
+		}
+		else{
+			$slot1 = '';	
+		}
+		if (isset($_POST['slot2']))
+		{
+			$slot2 = ($_POST['slot2']);
+		}
+		else{
+			$slot2 = '';	
+		}
+		if (isset($_POST['slot3']))
+		{
+			$slot3 = ($_POST['slot3']);
+		}
+		else{
+			$slot3 = '';	
+		}
+		if (isset($_POST['slot4']))
+		{
+			$slot4 = ($_POST['slot4']);
+		}
+		else{
+			$slot4 = '';	
+		}
+		if (isset($_POST['slot5']))
+		{
+			$slot5 = ($_POST['slot5']);
+		}
+		else{
+			$slot5 = '';	
+		}
+		if (isset($_POST['slot6']))
+		{
+			$slot6 = ($_POST['slot6']);
+		}
+		else{
+			$slot6 = '';	
+		}
+		if (isset($_POST['slot7']))
+		{
+			$slot7 = ($_POST['slot7']);
+		}
+		else{
+			$slot7 = '';	
+		}
+		if (isset($_POST['slot8']))
+		{
+			$slot8 = ($_POST['slot8']);
+		}
+		else{
+			$slot8 = '';	
+		}
+		if (isset($_POST['slot9']))
+		{
+			$slot9 = ($_POST['slot9']);
+		}
+		else{
+			$slot9 = '';	
+		}
 		$imagename = $_FILES["image"]["name"];
 		$type = $_FILES["image"]["type"];
 		$tmp = $_FILES["image"]["tmp_name"];
@@ -130,11 +191,11 @@
 	
 
 
-
+	
 // function insertDoctor($db, $uname, $pass,$imagename, $name ,$degree ,$expi ,$profession ,$hospital ,$address ,$fee ,$callno,$days ,$starttime ,$endtime)
 // {
-	$statement = "insert into doctor_registration values( '".$uname."','".$pass."','".$imagename."','".$name."','".$degree."','".$expi."','".$profession."','".$hospital."','".$address."','".$fee."','".$callno."','".$days."','".$starttime."','".$endtime."')";
-
+	   $statement = "insert into doctor_registration values( '".$uname."','".$pass."','".$imagename."','".$name."','".$degree."','".$expi."','".$profession."','".$hospital."','".$address."','".$fee."','".$callno."','".$days."','".$starttime."','".$endtime."','".$slot1."','".$slot2."','".$slot3."','".$slot4."','".$slot5."','".$slot6."','".$slot7."','".$slot8."','".$slot9."')";
+	   
 	$result = mysqli_query($db,$statement);
 
 
