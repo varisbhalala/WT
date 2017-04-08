@@ -133,8 +133,8 @@
 
 	            	echo "<td style='padding-right:5px;'>";
 	            	//echo "<a href='availability.php?doctorid=$name&starttime=$starttime&endime=$endtime'>check availibility </a>";
-	            	echo $row[$time];
-	            	
+	            	echo '<a href="available.php?time='.$time.'&doctorid='.$code.'">'.$row[$time].'</a>';
+	            	$time++;
 	            	echo "</td>";
 	            }
 	            echo "</tr>";
