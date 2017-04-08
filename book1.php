@@ -38,50 +38,50 @@
 	          if (mysqli_num_rows($result) > 0) {
 		          $i=0; 
 		          $row=mysqli_fetch_array($result,MYSQLI_NUM);	    
-			       while($row) {
+			       //while($row) {
 			        echo "<center><table style='margin-top:20px;margin-bottom:15px;'>";
 	            echo '<tr>';
 	            echo '<td rowspan="3" style="padding-right:40px;">';
-	            echo "<img height='160px' width='100px' src='/WT/uploaded/".$row["imagename"]."'>";
+	            echo "<img height='160px' width='100px' src='/WT/uploaded/".$row[2]."'>";
 	            echo "</td><td colspan='2'>";
-	            echo $row["fullname"];
+	            echo $row[3];
 	            echo "</td>";
 	            echo "<td>Address:";
-	            echo $row["locatedat"];
+	            echo $row[8];
 	            echo "</td>";
 	            echo "<td>working days:";
-	            echo $row["days"];
+	            echo $row[11];
 	            echo "</td>";
 	            echo "</tr>";
 	            echo '<tr>';
 	            echo '<td style="padding-right:20px;">experience:';
-	            echo $row["experience"];
+	            echo $row[5];
 	            echo "</td>";
 	            echo '<td style="padding-right:20px;">hospital:';
-	            echo $row["hospitalname"];
+	            echo $row[7];
 	            echo "</td>";
 	            echo '<td>fees:';
-	            echo $row["fees"];
+	            echo $row[9];
 	            echo "</td>";
 	            echo '<td>start time:';
-	            echo $row["starttime"];
+	            echo $row[13];
 	            echo "</td>";
 	            echo "</tr>";
 	            echo '<tr>';
 	            echo '<td>Degree:';
-	            echo $row["degree"];
+	            echo $row[4];
 	            echo "</td>";
 	            echo '<td>Speciality:';
-	            echo $row["speciality"];
+	            echo $row[6];
 	            echo "</td>";
 	            echo '<td style="padding-right:20px;">Contact no:';
-	            echo $row["contactno"];
+	            echo $row[10];
 	            echo "</td>";
 	            echo '<td>End time:';
-	            echo $row["endtime"];
+	            echo $row[14];
 	            echo "</td>";
 	            echo '</tr>';
-	            $name = $row['username'];
+	            $name = $row[0];
 	            echo '<tr>';
 	            echo "<td style='text-align:center;' colspan='5'>";
 	            echo "</td></tr>";
@@ -89,7 +89,7 @@
 	            echo "<h1>Today's Time Table</h1>";
 	            echo "<table style='margin-top:20px;'>";
 	            echo "<tr>";
-	            for ($i=$row['starttime']-1; $i < $row['endtime']-1 ; $i++) { 
+	            for ($i=$row[12]-1; $i < $row[13]-1 ; $i++) { 
 	            	echo "<th>";
 	            	echo $i+1;
 	            	echo " to ";
@@ -98,23 +98,51 @@
 	            }
 	            echo "</tr>";
 	            echo "<tr>";
-	            $starttime = $row['starttime'];
-	            $endtime = $row['endtime'];
-	            $timediff = $endtime -$starttime;
-	            for ($i=$row['starttime']-1; $i < $row['endtime']-1 ; $i++) { 
+	            $starttime = $row[12];
+	            $endtime = $row[13];
+	            if ($starttime == 10) {
+	            	$time = 14;
+	            }
+	            if ($starttime == 11) {
+	            	$time = 15;
+	            }
+	            if ($starttime == 12) {
+	            	$time = 16;
+	            }
+	            if ($starttime == 1) {
+	            	$time = 17;
+	            }
+	            if ($starttime == 2) {
+	            	$time = 18;
+	            }
+	            if ($starttime == 3) {
+	            	$time = 19;
+	            }
+	            if ($starttime == 4) {
+	            	$time = 20;
+	            }
+	            if ($starttime == 5) {
+	            	$time = 21;
+	            }
+	            if ($starttime == 6) {
+	            	$time = 22;
+	            }
+	     
+	            //$timediff = $endtime -$starttime;
+	            for ($i=$row[12]-1; $i < $row[13]-1 ; $i++) { 
 
 	            	echo "<td style='padding-right:5px;'>";
 	            	//echo "<a href='availability.php?doctorid=$name&starttime=$starttime&endime=$endtime'>check availibility </a>";
-	            	echo $row[22 - ($timediff+1)];
-	            	$timediff--;
+	            	echo $row[$time];
+	            	
 	            	echo "</td>";
 	            }
 	            echo "</tr>";
 	            echo "</table>";
 	            echo "</center>";
-			     }
+			}
 	            
-			   }		//}
+			  // }		//}
 		//else
 		//{
 		//	echo "Please Login first";
