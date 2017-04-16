@@ -11,11 +11,11 @@
   </head>
   <body>
   <?php
-      include 'header.php';
-      ?>
+    include 'header.php';
+  ?>
   <center>
-  <form action="change_pass.php" method="post">
-<?php
+    <form action="change_pass.php" method="post">
+    <?php
       //session_start();
      
       $db = mysqli_connect('localhost','root','');
@@ -44,17 +44,17 @@
       $result = mysqli_query($db,$sql);
       if (mysqli_num_rows($result) > 0) {
             
-            while($row = mysqli_fetch_assoc($result)) {
-                  echo $row["securityquestion"];
-            }
+        while($row = mysqli_fetch_assoc($result)) {
+          echo $row["securityquestion"];
+        }
       }
-      ?>
-      <input type="text" name="answer">
-      <input type="submit">
-      </form>
-      </center>
-      <?php
-      include 'footer.php';
-      ?>
+    ?>
+    <input type="text" name="answer">
+    <input type="submit">
+  </form>
+  </center>
+  <?php
+    include 'footer.php';
+  ?>
 </body>
 </html>

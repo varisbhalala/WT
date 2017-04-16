@@ -26,4 +26,4 @@
       if (mysqli_query($db,$sql)) {
             header('location:/WT/option.php'); 
       }
-      ?>
+?>

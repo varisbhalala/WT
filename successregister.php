@@ -10,13 +10,11 @@
     <link rel="stylesheet" type="text/css" href="css/index.css">
   </head>
   <body>
-    
     <?php
       //session_start();
       include 'header.php';
-      ?>
-    
-      <?php
+    ?>
+    <?php
 
       $db = mysqli_connect('localhost','root','');
 
@@ -101,10 +99,10 @@
         echo 'enter same password in password and confirm password field';
       }
       
-      ?>
-      <?php
+    ?>
+    <?php
       include 'footer.php';
-      ?>
+    ?>
 
-      </body>
-      </html>
+  </body>
+</html>

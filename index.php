@@ -29,7 +29,7 @@
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
       </a>
-      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">	
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
       </a>
@@ -37,46 +37,46 @@
       
 
     
-        <p class="mainname">Find and Book</p>
-        <div class="row" id="searchbar">
+    <p class="mainname">Find and Book</p>
+    <div class="row" id="searchbar">
+    
+        <form class="form-inline" action="list.php" method="post">
+          <button class="btn" type="button" data-toggle="collapse" data-target="#city" aria-expanded="false" aria-controls="city" >
+            <img src="images/pin.png" width="7%" height="4%"> City
+          </button>
+          <select name="by" style="margin-left: 20px">
+            <option value="by_name" selected>By Name</option>
+            <option value="by_speciality">By Speciality</option>
+            <option value="by_area">By Area</option>
+          </select>
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" size="40" style="margin-left: 20px;" name="search">
+            <button class="button button2 my-2 my-sm-0" type="submit">Search</button>
+          </form>
         
-            <form class="form-inline" action="list.php" method="post">
-              <button class="btn" type="button" data-toggle="collapse" data-target="#city" aria-expanded="false" aria-controls="city" >
-                <img src="images/pin.png" width="7%" height="4%"> City
-              </button>
-              <select name="by" style="margin-left: 20px">
-                <option value="by_name" selected>By Name</option>
-                <option value="by_speciality">By Speciality</option>
-                <option value="by_area">By Area</option>
-              </select>
-                <input class="form-control mr-sm-2" type="text" placeholder="Search" size="40" style="margin-left: 20px;" name="search">
-                <button class="button button2 my-2 my-sm-0" type="submit">Search</button>
-              </form>
-            
+    </div>
+    <div class="row">
+      <div class="collapse" id="city">
+        <div class="card card-block">
+          <table>
+            <tr>
+              <td width="400px;"><a href="#">Anand</a></td>
+              <td width="400px;"><a href="#">Banglore</a></td>
+              <td><a href="#">Surat</a></td>
+            </tr>
+            <tr>
+              <td width="400px;"><a href="#">Mumbai</a></td>
+              <td width="400px;"><a href="#">Chennai</a></td>
+              <td><a href="#">Delhi</a></td>
+            </tr>
+            <tr>
+              <td width="400px;"><a href="#">Pune</a></td>
+              <td width="400px;"><a href="#">Ahmedabad</a></td>
+              <td><a href="#">Vadodara</a></td>
+            </tr>
+          </table>
         </div>
-        <div class="row">
-            <div class="collapse" id="city">
-              <div class="card card-block">
-                <table>
-                  <tr>
-                    <td width="400px;"><a href="#">Anand</a></td>
-                    <td width="400px;"><a href="#">Banglore</a></td>
-                    <td><a href="#">Surat</a></td>
-                  </tr>
-                  <tr>
-                    <td width="400px;"><a href="#">Mumbai</a></td>
-                    <td width="400px;"><a href="#">Chennai</a></td>
-                    <td><a href="#">Delhi</a></td>
-                  </tr>
-                  <tr>
-                    <td width="400px;"><a href="#">Pune</a></td>
-                    <td width="400px;"><a href="#">Ahmedabad</a></td>
-                    <td><a href="#">Vadodara</a></td>
-                  </tr>
-                </table>
-              </div>
-            </div>
-          </div>
+      </div>
+    </div>
           
 
           
@@ -85,12 +85,12 @@
     <footer style="margin-top: 20px;">
       <div class="row" class="footer">
         <div class="links">
-            <p>QUICK LINKS</p>
-            <a href="index.php" style="text-decoration: none;">Search the Doctors</a><br>
-            <a href="contactus.php" style="text-decoration: none;">Contact Us</a><br>
-            <a href="aboutus.php" style="text-decoration: none;">About Us</a>
-          </div>
+          <p>QUICK LINKS</p>
+          <a href="index.php" style="text-decoration: none;">Search the Doctors</a><br>
+          <a href="contactus.php" style="text-decoration: none;">Contact Us</a><br>
+          <a href="aboutus.php" style="text-decoration: none;">About Us</a>
         </div>
+      </div>
       </div>
     </footer>
 

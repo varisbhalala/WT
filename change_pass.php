@@ -1,7 +1,7 @@
 
 <?php
       session_start();
-     //include 'header.php';
+      //include 'header.php';
       $db = mysqli_connect('localhost','root','');
 
       if (!$db)
@@ -35,6 +35,6 @@
       }
       else
       {
-        echo "enter right answer";
+            echo "enter right answer";
       }
-      ?>
+?>

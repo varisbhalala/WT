@@ -1,12 +1,12 @@
 <!DOCTYPE html>
   <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <!-- Required meta tags -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/index.css">
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+   <link rel="stylesheet" type="text/css" href="css/index.css">
   </head>
 <body>
   
@@ -14,8 +14,8 @@
 	    include 'header.php';
 	?>
 	<center>
-	<?php
-		//if (isset($_SESSION['user'])) {
+		<?php
+			//if (isset($_SESSION['user'])) {
 			$code = $_REQUEST['doctorid'];
 			//echo $code;		
 			$db = mysqli_connect('localhost','root','');
@@ -35,11 +35,11 @@
 	        }
 	        $statement = "SELECT * FROM doctor_registration WHERE username = '$code'";
 			$result = mysqli_query($db, $statement);
-	          if (mysqli_num_rows($result) > 0) {
-		          $i=0; 
-		          $row=mysqli_fetch_array($result,MYSQLI_NUM);	    
-			       //while($row) {
-			        echo "<center><table style='margin-top:20px;margin-bottom:15px;'>";
+	        if (mysqli_num_rows($result) > 0) {
+		        $i=0; 
+		        $row=mysqli_fetch_array($result,MYSQLI_NUM);	    
+			    //while($row) {
+			    echo "<center><table style='margin-top:20px;margin-bottom:15px;'>";
 	            echo '<tr>';
 	            echo '<td rowspan="3" style="padding-right:40px;">';
 	            echo "<img height='160px' width='100px' src='/WT/uploaded/".$row[2]."'>";
@@ -147,7 +147,7 @@
 		//{
 		//	echo "Please Login first";
 		//}
-	?>
+		?>
 	</center>
 	<?php
       include 'footer.php';
